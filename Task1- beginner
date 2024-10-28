@@ -1,0 +1,99 @@
+BAR CHART
+import matplotlib.pyplot as plt
+x = [3, 1, 3, 12, 2, 4, 4]
+y = [3, 2, 1, 4, 5, 6, 7]
+plt.bar(x, y)
+plt.title("Bar Chart")
+plt.show()
+
+LINE CHART
+import matplotlib.pyplot as plt
+x = [3, 1, 3]
+y = [3, 2, 1]
+plt.plot(x, y)
+plt.title("Line Chart")
+plt.show()
+
+HISTOGRAM
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4, 5, 6, 7, 4]
+plt.hist(x, bins = [1, 2, 3, 4, 5, 6, 7])
+plt.title("Histogram")
+plt.show()
+
+SCATTER CHART
+import matplotlib.pyplot as plt
+x = [3, 1, 3, 12, 2, 4, 4]
+y = [3, 2, 1, 4, 5, 6, 7]
+plt.scatter(x, y)
+plt.title("Scatter chart")
+plt.show()
+
+PIE CHART
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+e  =(0.1, 0, 0, 0)
+plt.pie(x, explode = e)
+plt.title("Pie chart")
+plt.show()
+
+PAIR PLOT
+import seaborn as sns
+import matplotlib.pyplot as plt
+tips = sns.load_dataset("tips")
+sns.pairplot(tips, hue="smoker", palette="coolwarm")
+plt.show()
+
+
+HEAT MAP
+import seaborn as sns
+import matplotlib.pyplot as plt
+flights = sns.load_dataset("flights")
+flights_pivot = flights.pivot(index="month", columns="year", values="passengers")
+sns.heatmap(flights_pivot, annot=True, fmt="d", cmap="YlGnBu")
+plt.show()
+
+
+BARGRAPH
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.countplot(data=tips, x="day")
+plt.show()
+
+
+SCATTER PLOT
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,3,5,7,11]
+plt.scatter(x,y)
+plt.title('scatterplot')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axix')
+plt.show()
+
+STEM PLOT
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0.1, 2 * np.pi, 41)
+y = np.exp(np.sin(x))
+plt.stem(x, y, use_line_collection = True)
+plt.show()
+
+
+ERROR BAR
+import matplotlib.pyplot as plt
+x =[1, 2, 3, 4, 5, 6, 7]
+y =[1, 2, 1, 2, 1, 2, 1]
+y_error = 0.2
+plt.plot(x, y)
+plt.errorbar(x, y,
+            yerr = y_error,
+            fmt ='o')
+
+
+RELATIONAL PLOT
+import seaborn as sns
+import matplotlib.pyplot as plt
+tips = sns.load_dataset("tips")
+sns.relplot(data=tips, x="total_bill", y="tip", hue="smoker")
+plt.show()
